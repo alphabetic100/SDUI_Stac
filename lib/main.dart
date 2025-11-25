@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Stac(routeName: 'home_screen'),
+      home: const Stac(routeName: 'user_management_screen'),
     );
   }
 }
