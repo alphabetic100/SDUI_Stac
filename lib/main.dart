@@ -14,10 +14,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
+      // Add named routes here
+      routes: {
+        '/first_screen': (context) => const Stac(routeName: 'first_screen'),
+        '/second_screen': (context) => const DemoPage(title: 'Second Screen'),
+       
+      },
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Stac(routeName: 'user_management_screen'),
+
+      // Default screen
+      home: const Stac(routeName: 'first_screen'),
+    );
+  }
+}
+
+// Simple demo screen
+class DemoPage extends StatelessWidget {
+  final String title;
+  const DemoPage({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Center(child: Text(title)),
     );
   }
 }
